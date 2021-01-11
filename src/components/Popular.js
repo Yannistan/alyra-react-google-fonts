@@ -4,7 +4,7 @@ import GoogleFontLoader from "react-google-font-loader";
 import { SizeContext } from "../context/SizeContext";
 
 const Popular = () => {
-  //const { text, size } = props
+  
   const [popularFonts, setPopularFonts] = useState([]);
   const { previewText } = useContext(PreviewContext);
   const { size } = useContext(SizeContext);
@@ -12,7 +12,6 @@ const Popular = () => {
   useEffect(() => {
     const API_KEY = process.env.REACT_APP_GFONTS_API_KEY;
     const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}&sort=popularity`;
-//const url = "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCiQDV1ISkGASrS8JmKqi5JJG2tzkgQhaY&sort=popularity";
 
 fetch(url)
  .then((response) => {
@@ -32,8 +31,7 @@ fetch(url)
  }, []);
 
 console.log("popularFonts", popularFonts);
-//console.log("popularFonts", popularFonts);
-//console.log("trendyFonts", trendyFonts);
+
 
 
 return (

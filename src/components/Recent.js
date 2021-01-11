@@ -12,15 +12,10 @@ const Recent = () => {
   const { size } = useContext(SizeContext);
 
   useEffect(() => {
-//const API_KEY = process.env.REACT_APP_GFONTS_API_KEY;
-    
-//REACT_APP_GFONTS_API_KEY = AIzaSyCiQDV1ISkGASrS8JmKqi5JJG2tzkgQhaY
+
 const API_KEY = process.env.REACT_APP_GFONTS_API_KEY;
 const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}&sort=date`;
-    //const url = "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCiQDV1ISkGASrS8JmKqi5JJG2tzkgQhaY&sort=date";
-    
-    // fonts triés par date
-    
+ 
     fetch(url)
       .then((response) => {
         if (response.ok) {
@@ -34,13 +29,12 @@ const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}&sort
       .catch((error) => {
         alert(error.message);
       }); 
-      // fonts triés par popularité
+      // fonts triés par date
     
   }, []);
 
   console.log("recentFonts", recentFonts);
-  //console.log("popularFonts", popularFonts);
-  //console.log("trendyFonts", trendyFonts);
+ 
 
 
   return (
